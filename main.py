@@ -6,23 +6,18 @@ from db.models import Genre, Actor
 
 
 def main() -> QuerySet:
-    genre = ["Western", "Action", "Drama"]
-    genre_obj = [Genre.objects.create(name=g) for g in genre]
+    genre = ["Western", "Action", "Dramma"]
+    [Genre.objects.create(name=g) for g in genre]
 
     actors = [
-        ("George", "klooney"),
+        ("George", "Klooney"),
         ("Kianu", "Reaves"),
         ("Scarlett", "Keegan"),
         ("Will", "Smith"),
         ("Jaden", "Smith"),
         ("Scarlett", "Johansson"),
     ]
-    actor_obj = [
-        Actor.objects.create(first_name=f, last_name=l) for f, l in actors
-    ]
-
-    print(genre_obj)
-    print(actor_obj)
+    [Actor.objects.create(first_name=f, last_name=l) for f, l in actors]
 
     Genre.objects.filter(
         name="Dramma"
