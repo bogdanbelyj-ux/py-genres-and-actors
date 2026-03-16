@@ -1,6 +1,6 @@
-import init_django_orm #noqa: F401
+import init_django_orm  # noqa: F401
 
-from django.db.models import QuerySet, OrderBy
+from django.db.models import QuerySet
 
 from db.models import Genre, Actor
 
@@ -9,7 +9,6 @@ def main() -> QuerySet:
     Genre.objects.create(name="Western")
     Genre.objects.create(name="Action")
     Genre.objects.create(name="Dramma")
-
 
     Actor.objects.create(first_name="George", last_name="Klooney")
     Actor.objects.create(first_name="Kianu", last_name="Reaves")
@@ -38,7 +37,5 @@ def main() -> QuerySet:
     return [Actor.objects.get(last_name="Smith").order_by("first_name")]
 
 
-
 if __name__ == "__main__":
     main()
-
